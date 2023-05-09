@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+
+canvas {
+    border: 1px solid black;
+    background-image:  url ("../images/background.png");
+}
+
+body{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 0px;
+    margin: 0px;
+    background-color: rgb(2, 2, 2);
+}
+h1{
+    padding-top: 9px;
+    padding-left: 7px;
+    color: rgb(102, 74, 102);
+    font-size: 25px;
+    margin: auto;
+
+}
+h2{
+    padding-top: 5.5rem;
+    text-align: center;
+    line-height: 4rem;
+    color: rgb(238, 100, 100);
+    font-size: 3.5rem;
+    font-family:fantasy;
+}   
+.instrut{
+    background-image: url("../images/background3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 30rem;
+    margin-left: 25rem;
+}
+
+p{
+   font-size: 15px;
+   font-size: 13px;
+   color: rgb(29, 82, 100);
+   padding-left: 6px;
+   padding-top: 5px;
+   line-height: 1.2rem;
+   margin: auto;
+}
+
+#start-game{
+    margin-left: 20rem;
+    font-size: 0.8rem;   
+ }
