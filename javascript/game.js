@@ -1,8 +1,8 @@
 class gameArea {
     constructor () {
         this.player = {};
-        this.obstacle = [];
-        this.score = 0;
-        this.img = './images/background.png';
+        this.obstacles = [];
+        //this.score = 0;
+        
     }
 }

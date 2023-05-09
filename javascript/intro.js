@@ -1,50 +1,62 @@
-window.addEventListener("load", () => {
-    const game = document.getElementById ('boardGame');
-    
-    const startButton = document.getElementById('start-game');
-    startButton.addEventListener("click", () => {
-        if (game.classList.contains("hidden")){
-            game.classList.remove("hidden");
-        }
-        })
-    })
-    
-    
-    let actualGame;
-    let actualPlayer;
-    
     document.getElementById('boardGame').style.display = 'hidden';
     const canvas = document.getElementById('canvas-game');
     const ctx = canvas.getContext('2d');
+
+
+    window.addEventListener("load", () => {
+
+    let playerImg = new Image();
+    playerImg.src='../images/player.png'
+
+    let obsImg = new Image();
+    obsImg.src='../images/lion.png'
+    
+    const game = document.getElementById ('boardGame');
+    const startButton = document.getElementById('start-game');
+    const info = document.getElementById('instrut');
+    //const player = new Component ();
+    
+    startButton.addEventListener("click", () => {
+        if (game.classList.contains("hidden")){
+            game.classList.remove("hidden");
+            info.classList.add('hidden');
+        }
+
+        startGame();
+        })
     
 
+ 
+    let actualGame;
+    let actualPlayer;
+    let actualLion;
     
-    document.onekeydown = (e) => {
-        let toMove = e.keyCode;
-        currentGame.player.movePlayer(toMove);
-    }
     
-    
+  
     function startGame (){
-        document.getElementById('camvas-game').style.sisplay = 'block';
+        document.getElementById('canvas-game').style.display = 'visible';
         actualGame = new gameArea;
-        actualPlayer = new Component;
+        actualPlayer = new Player;
         actualGame.player = actualPlayer;
-        actualGame.player.drawPlayer();
+        actualLion = new obstacles;
+        actualGame.obstacle = actualLion;
+       // actualGame.player.drawPlayer();
         updateCanvas();
     }
     
     function collision(obstacle){
-        return !((actualPlayer.x > obstacle.x + obstacle.heigth) || 
-        (actualPlayer.y + actualPlayer.width < obstacle.y) || 
-        (actualPlayer.y - actualPlayer.width > obstacle.y + obstacle.width))
+        return ((actualPlayer.x < obstacle.x + obstacle.width) &&  (actualPlayer.x + actualPlayer.width > obstacle.x) && 
+        (actualPlayer.y + actualPlayer.heigth > obstacle.y) && 
+        (actualPlayer.y < obstacle.y + obstacle.heigth))
     }
     
     let frequencyLion = 0;
     
     function updateCanvas (){
         ctx.clearRect(0, 0, 500, 300 );
-        actualGame.player.drawPlayer();
+        ctx.drawImage(playerImg, actualPlayer.x, actualPlayer.y, 100, 100);
+        ctx.drawImage(obsImg, actualLion.x, actualLion.y, 100, 100 )
+ 
         frequencyLion ++
     
         if (frequencyLion % 100 === 1){
@@ -58,8 +70,8 @@ window.addEventListener("load", () => {
         }
         
         for(let i = 0; i<actualGame.obstacles.length; i++) {
-            currentGame.obstacles[i].y -= 1;
-            currentGame.obstacles[i].drawObstacle();
+            actualGame.obstacles[i].y -= 1;
+            //actualGame.obstacles[i].drawObstacle();
     
             if (collision(actualGame.obstacles[i])) {
                 alert('GAME OVER');
@@ -69,11 +81,14 @@ window.addEventListener("load", () => {
                 actualGame.obstacles=[];
                 document.getElementById('canvas-game').style.display = 'none';
             }
+            
     }
-    
     requestAnimationFrame(updateCanvas);
     
     
+    
     }
+
+})
     
     

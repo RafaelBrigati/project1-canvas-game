@@ -1,59 +1,62 @@
-const player = new Component ();
 
-class Component{
+
+class Player{
     cnstructor(){
-    this.ctx=ctx;
     this.x = 25;
     this.y = 25;
     this.speed = speed;
     this.width = 30;
-    this.heigth = 50
+    this.heigth = 100
     this.speedX = 0;
     this.speedY = 0;
-    this.img = new Image ();
-    this.img.src='./images/player.png'
-    this.img.addEventListener('load', () => {
-    this.drawPlayer();
-    })
+    // this.img = new Image();
+    // this.img.src='../images/player.png'
+    // this.img.addEventListener('load', () => {
+
+    // })
     } 
+
          
 
     movePlayer(keyCode){
     ctx.clearRect(this.x, this.y, this.width, this.heigth);
     document.addEventListener('keydown', (e) => {
-         switch (e.KeyCode) {
+         switch (keyCode) {
             case 38:
-                player.speedY +=1;
+                Player.speedY +=1;
                 break;
             case 40:
-                player.speedY +=1;
+                Player.speedY +=1;
                 break;
             case 37:
-                player.speedX -= 1;
+                Player.speedX -= 1;
                 break;
             case 39:
-                player.speedX += 1;
+                Player.speedX += 1;
                  break;
-        
-        
-         }
-        moveUp() 
+    }
+}
+    )}
+
+        moveUp() {
         this.y -= 25;
-        
+        }
 
-        moveDown() 
+        moveDown() {
         this.y += 25;
-        
+        }
 
-        moveLeft() 
+        moveLeft() {
         this.x -= 25;
+        }
+
+        moveRight() {
+        this.x += 25; 
+        }
+        
+        drawPlayer() {
+        ctx.drawImage(this.img, this.x, this.y);
+        }
         
 
-        moveRight() 
-        this.x += 25; 
-        
-        drawPlayer() 
-        this.ctx.drawImage(this.img, this.x, this.y)
-    
-    
-    })
+    }

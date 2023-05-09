@@ -1,16 +1,17 @@
 class obstacles {
     constructor (x, y, width, heigth) {
         this.x=x;
-        this.y=ythis.width=width;
+        this.y=y;
+        this.width=width;
         this.heigth=heigth;
-        this.img.src= './images/lion';
-        this.img.addEventListener('load', () => {
-            this.drawObstacle();
-        })
+        // this.img = new Image();
+        // this.img.src= '../images/lion.png';
+        // this.img.addEventListener('load', () => {
+        //     this.drawObstacle();
+        // })
     }
     drawObstacle() {
-        const imgLion = new Image ();
-        imgLion.src = this.img;
+        
         ctx.drawImage(this.img, this.x, this.y, this.width, this.heigth)
         }  
 
