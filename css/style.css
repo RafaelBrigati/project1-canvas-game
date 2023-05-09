@@ -2,7 +2,7 @@
 
 canvas {
     border: 1px solid black;
-    background-image:  url ('../images/background.png');
+    /* background-image:  url ('../images/background.png'); */
 }
 
 body{
@@ -49,4 +49,7 @@ p{
 #start-game{
     margin-left: 20rem;
     font-size: 0.8rem;   
+ }
+ #hidden{
+
  }

@@ -6,16 +6,15 @@ class obstacles {
         this.heigth=heigth;
         // this.img = new Image();
         // this.img.src= '../images/lion.png';
-        // this.img.addEventListener('load', () => {
-        //     this.drawObstacle();
-        // })
+        
     }
-    drawObstacle() {
+        drawObstacle() {
         
-        ctx.drawImage(this.img, this.x, this.y, this.width, this.heigth)
-        }  
+        ctx.drawImage(obsImg, this.x, this.y, this.width, this.heigth);
+        
+    }  
 
 
-        
 }
+
 

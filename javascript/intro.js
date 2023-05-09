@@ -6,10 +6,13 @@
     window.addEventListener("load", () => {
 
     let playerImg = new Image();
-    playerImg.src='../images/player.png'
+    playerImg.src='../images/player.png';
 
     let obsImg = new Image();
-    obsImg.src='../images/lion.png'
+    obsImg.src='../images/lion.png';
+
+    // let bkgImage = new Image();
+    // bkgImage.src='../background.png';
     
     const game = document.getElementById ('boardGame');
     const startButton = document.getElementById('start-game');
@@ -54,7 +57,8 @@
     
     function updateCanvas (){
         ctx.clearRect(0, 0, 500, 300 );
-        ctx.drawImage(playerImg, actualPlayer.x, actualPlayer.y, 100, 100);
+        console.log("Hello");
+        ctx.drawImage(playerImg, 100, 100, 100, 100);
         ctx.drawImage(obsImg, actualLion.x, actualLion.y, 100, 100 )
  
         frequencyLion ++

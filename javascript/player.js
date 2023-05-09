@@ -1,19 +1,17 @@
 
 
 class Player{
-    cnstructor(){
+    constructor(){
     this.x = 25;
     this.y = 25;
-    this.speed = speed;
+    this.speed = 5;
     this.width = 30;
     this.heigth = 100
     this.speedX = 0;
     this.speedY = 0;
     // this.img = new Image();
     // this.img.src='../images/player.png'
-    // this.img.addEventListener('load', () => {
-
-    // })
+    
     } 
 
          
@@ -23,16 +21,16 @@ class Player{
     document.addEventListener('keydown', (e) => {
          switch (keyCode) {
             case 38:
-                Player.speedY +=1;
+                this.y +=1;
                 break;
             case 40:
-                Player.speedY +=1;
+                this.y +=1;
                 break;
             case 37:
-                Player.speedX -= 1;
+                this.y -= 1;
                 break;
             case 39:
-                Player.speedX += 1;
+                this.x += 1;
                  break;
     }
 }
