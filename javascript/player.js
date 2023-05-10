@@ -9,8 +9,6 @@ class Player{
     this.heigth = 100
     this.speedX = 0;
     this.speedY = 0;
-    // this.img = new Image();
-    // this.img.src='../images/player.png'
     
     } 
 
@@ -36,24 +34,12 @@ class Player{
 }
     )}
 
-        moveUp() {
-        this.y -= 25;
-        }
-
-        moveDown() {
-        this.y += 25;
-        }
-
-        moveLeft() {
-        this.x -= 25;
-        }
-
-        moveRight() {
-        this.x += 25; 
-        }
+    
         
         drawPlayer() {
-        ctx.drawImage(this.img, this.x, this.y);
+            let playerImg = new Image();
+            playerImg.src='../images/player.png';
+            ctx.drawImage(playerImg, this.x, this.y);
         }
         
 

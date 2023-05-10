@@ -15,7 +15,7 @@ h1{
     padding-top: 9px;
     padding-left: 7px;
     color: rgb(102, 74, 102);
-    font-size: 25px;
+    font-size: 30px;
     margin: auto;
 
 }
@@ -41,7 +41,7 @@ p{
    font-size: 13px;
    color: rgb(29, 82, 100);
    padding-left: 6px;
-   padding-top: 5px;
+   padding-top: 10px;
    line-height: 1.2rem;
    margin: auto;
 }
@@ -50,6 +50,10 @@ p{
     margin-left: 20rem;
     font-size: 0.8rem;   
  }
- #hidden{
-
+ 
+ #border {
+    color: white;
+    font-size: 15px;
+   
  }
+

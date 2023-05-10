@@ -11,8 +11,8 @@
     let obsImg = new Image();
     obsImg.src='../images/lion.png';
 
-    // let bkgImage = new Image();
-    // bkgImage.src='../background.png';
+    let bkgImage = new Image();
+    bkgImage.src='../background.png';
     
     const game = document.getElementById ('boardGame');
     const startButton = document.getElementById('start-game');
@@ -57,7 +57,6 @@
     
     function updateCanvas (){
         ctx.clearRect(0, 0, 500, 300 );
-        console.log("Hello");
         ctx.drawImage(playerImg, 100, 100, 100, 100);
         ctx.drawImage(obsImg, actualLion.x, actualLion.y, 100, 100 )
  
@@ -77,14 +76,14 @@
             actualGame.obstacles[i].y -= 1;
             //actualGame.obstacles[i].drawObstacle();
     
-            if (collision(actualGame.obstacles[i])) {
-                alert('GAME OVER');
-                obstacleFrequency = 0;
-                //actualGame.score = 0;
-                //document.gerElementById('score').innerHTML = 0
-                actualGame.obstacles=[];
-                document.getElementById('canvas-game').style.display = 'none';
-            }
+            // if (collision(actualGame.obstacles[i])) {
+            //     alert('GAME OVER');
+            //     obstacleFrequency = 0;
+            //     //actualGame.score = 0;
+            //     //document.gerElementById('score').innerHTML = 0
+            //     actualGame.obstacles=[];
+            //     document.getElementById('canvas-game').style.display = 'none';
+            // }
             
     }
     requestAnimationFrame(updateCanvas);
