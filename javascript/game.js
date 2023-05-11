@@ -1,7 +1,7 @@
-class gameArea {
+class GameArea {
     constructor () {
-        this.player = {};
-        this.obstacles = [];
+        // this.player = {};
+        this.obstacleArr = [];
         //this.score = 0;
         
     }
