@@ -1,7 +1,7 @@
 
 
 class Player{
-    constructor(){
+    constructor(x, y, width, heigth){
     this.x = 25;
     this.y = 25;
     this.speed = 5;
@@ -34,8 +34,6 @@ class Player{
 }
     )}
 
-    
-        
         drawPlayer() {
             let playerImg = new Image();
             playerImg.src='../images/player.png';

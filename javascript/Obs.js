@@ -9,7 +9,6 @@ class obstacles {
         
     }
         drawObstacle() {
-        
         ctx.drawImage(obsImg, this.x, this.y, this.width, this.heigth);
         
     }  
