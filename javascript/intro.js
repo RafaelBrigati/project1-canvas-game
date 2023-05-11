@@ -34,7 +34,7 @@
 
 
     const forestimg = new Image();
-    forestimg.src = '../images/background.png';
+    forestimg.src = './images/background.png';
 
     const forstboardimg = {
      img: forestimg,
@@ -44,9 +44,10 @@
     
  move: function(){
     this.forestFrame++;
-   this.x -=this.forestspeend;
-   this.x %= canvas.width;
+   this.forestFrame -=this.forestspeend;
+   this.forestFrame %= canvas.width;
  },
+
  draw: function(){
     ctx.drawImage(this.img, 0, this.x, canvas.width, canvas.height);
     ctx.drawImage(this.img, 0, this.x - canvas.width, canvas.height, canvas.width);
@@ -128,8 +129,8 @@ function score(){
             ctx.clearRect(0, 0, canvas.width, canvas.height);
              forstboardimg.draw();
              actualPlayer.drawPlayer();
+             actualPlayer.movePlayer();
              actualLion.drawObstacle();
-            
             score();
            
              let animation = requestAnimationFrame(updateCanvas);

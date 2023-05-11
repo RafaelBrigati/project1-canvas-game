@@ -17,27 +17,36 @@ class Player{
     this.y = 210;
     this.width = 150;
     this.height= 140;
-    this.speed = 8;
+    this.speed = 5;
     this.speedX = 0;
     this.speedY = 0;
     
     } 
 
     movePlayer(keyCode){
-        // ctx.clearRect(this.x, this.y, this.width, this.heigth);
+             if(this.speed === 1){
+      this.x += this.speed;
+    }
+    else if(this.speed < 1){
+      this.x -= 3;
+    }
+    else if (this.speed > 1){
+      this.x += 3;
+     ctx.clearRect(this.x, this.y, this.width, this.heigth);
+    }
         document.addEventListener('keydown', (e) => {
-             switch (keyCode) {
-                case 38:
-                    this.y +=1;
-                    break;
-                case 40:
-                    this.y +=1;
-                    break;
+             switch (e.keyCode) {
                 case 37:
-                    this.y -= 1;
+                    this.x +=1;
                     break;
                 case 39:
-                    this.x += 1;
+                    this.y -=1;
+                    break;
+                case 40:
+                    this.x -= 1;
+                    break;
+                case 39:
+                    this.y += 1;
                      break;
         }
     }
