@@ -60,3 +60,10 @@ p{
 .hidden{
     display:none ;
 }
+
+img{
+   margin: 0;
+   padding-top: 3rem;
+   padding-left: 2rem;
+    width: 12rem;
+}
