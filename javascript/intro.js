@@ -1,18 +1,17 @@
-       window.addEventListener("load", () => {
+window.addEventListener("load", () => {
 
-        const myButton= document.getElementById('start-game')
-         const canvasid= document.getElementById('canvas')
+    const myButton= document.getElementById('start-game')
+     const canvasid= document.getElementById('canvas')
 
 
-         myButton.addEventListener("click", () => {
-            if ( myButton.classList.contains("hidden")){
-                myButton.classList.remove("hidden");
-                canvasid.classList.add('hidden');
-            }
-            startGame()
-            })
-         
-
+     myButton.addEventListener("click", () => {
+        if ( myButton.classList.contains("hidden")){
+            myButton.classList.remove("hidden");
+            canvasid.classList.add('hidden');
+        }
+        startGame()
+        })
+     
 
 
          const canvas = document.getElementById('canvas-game');
@@ -87,14 +86,14 @@ function score(){
   
    function startGame() {
     console.log("checking if am still here lol");
-        document.getElementById('start-game').style.display = 'none';
+        document.getElementById('start-game')
         actualGame = new GameArea;
          actualPlayer = new Player;
         // actualGame.Player = actualPlayer;
         actualLion = new ProduceObs;
         actualGame.ProduceObs = actualLion;
        // actualGame.player.drawPlayer();
-    // interval= setInterval( updateCanvas, 20);
+    //  interval= setInterval( , 20);
     updateCanvas()
     }
 
@@ -114,29 +113,31 @@ function score(){
  
     //  frequencyLion ++
     
-        if (forstboardimg.forestFrame % 120 === 0){
+        if (forstboardimg.forestFrame % 3000 === 0){
             let randomLionX = 600; 
+            let randomLionY = 255;
             // let randomLionY = Math.floor(Math.random() * 450);
             let randomLionWidth = 120 + Math.floor(Math.random() * 350) 
             let randomLionHeigth = Math.floor(Math.random() * 90)
-            let newLion = new  ProduceObs (randomLionX, randomLionWidth, randomLionHeigth);
+            let newLion = new  ProduceObs (randomLionX, randomLionY, randomLionWidth, randomLionHeigth);
             
             actualGame.obstacleArr.push(newLion);
         }
             
             forstboardimg.move();
-            actualLion.move();
+            // actualLion.move();
             ctx.clearRect(0, 0, canvas.width, canvas.height);
              forstboardimg.draw();
              actualPlayer.drawPlayer();
              actualPlayer.movePlayer();
-             actualLion.drawObstacle();
+            //  actualLion.drawObstacle();
             score();
            
              let animation = requestAnimationFrame(updateCanvas);
 
         for(let i = 0; i< actualGame.obstacleArr.length; i++) {
-            actualGame.obstacleArr[i].x -= 1;
+            actualGame.obstacleArr[i].drawObstacle();
+            actualGame.obstacleArr[i].move()
             //  actualGame.obstacleArrs[i].drawObstacle();
 
 
