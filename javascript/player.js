@@ -14,12 +14,12 @@
 class Player{
     constructor(){
     this.x = 20;
-    this.y = 210;
-    this.width = 150;
-    this.height= 140;
+    this.y = 232;
+    this.width = 120;
+    this.height= 110;
 
-     this.speedX = 1;
-     this.speedY =0 ;
+    //  this.speedX = 1;
+    //  this.speedY =0 ;
     
     } 
 
@@ -37,16 +37,16 @@ class Player{
         document.addEventListener('keydown', (e) => {
              switch (e.key) {
                 case "ArrowRight":
-                    this.speedX +=1;
+                    this.x +=1;
                     break;
                 case  "ArrowUp":
-                    this.speedY +=0;
+                    this.y +=1;
                     break;
                 case "ArrowLeft":
-                    this.speedX -= 1;
+                    this.x -= 1;
                     break;
                 case "ArrowDown":
-                    this.speedY -= 0;
+                    this.y -= 1;
                      break;
         }
     }

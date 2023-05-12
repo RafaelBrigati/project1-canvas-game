@@ -4,9 +4,9 @@
 class ProduceObs {
     constructor () {
         this.x=600;
-        this.y=255;
-        this.width=120;
-        this.heigth=90;
+        this.y=270;
+        this.width=95;
+        this.heigth=70;
         this.speedx =4;
         // this.img = new Image();
         // this.img.src= '../images/lion.png';

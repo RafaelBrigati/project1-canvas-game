@@ -33,28 +33,48 @@ window.addEventListener("load", () => {
 
 
     const forestimg = new Image();
-    forestimg.src = './images/background.png';
+    forestimg.src = './images/backgroundd.png';
 
-    const forstboardimg = {
-     img: forestimg,
-     y: 0,
-    forestspeend: -9,
-    forestFrame: 0,
+//     const boardImg = {
+//      img: forestimg,
+//      y: 0,
+//     forestspeend: -9,
+//     x: 0,
     
- move: function(){
-    this.forestFrame++;
-   this.forestFrame -=this.forestspeend;
-   this.forestFrame %= canvas.width;
- },
+//  move: function(){
+//     this.forestFrame++;
+//    this.forestFrame -=this.forestspeend;
+//    this.forestFrame %= canvas.width;
+//  },
 
- draw: function(){
-    ctx.drawImage(this.img, 0, this.x, canvas.width, canvas.height);
-    ctx.drawImage(this.img, 0, this.x - canvas.width, canvas.height, canvas.width);
+//  draw: function(){
+//     ctx.drawImage(this.img, 0, this.x, canvas.width, canvas.height);
+//     ctx.drawImage(this.img, 0, this.x - canvas.width, canvas.height, canvas.width);
 
- },
-};
+//  },
+// };
 
+class  Forstboardimg {
+    constructor(){
+        this.x = 0;
+        this.y = 0;
+        this.forestspeend = 9;
+        this.img =forestimg;
+    }
 
+    move(){
+        this.x ++;
+        this.x -= this.forestspeend;
+        this.x %= canvas.width;
+    }
+    draw (){
+        ctx.drawImage(this.img, this.x, this.y,  canvas.width, canvas.height);
+       ctx.drawImage(this.img, this.x, this.y - canvas.width, canvas.height, canvas.width);
+
+    }
+}
+
+const boardImg = new Forstboardimg ( this.x, this.y, canvas.width, canvas.height);
 // forstboardimg.onload = function () {
 //     updateCanvas()
 // }
@@ -71,10 +91,8 @@ window.addEventListener("load", () => {
 function score(){
     ctx.font = '25px serif';
     ctx.style = 'red';
-    ctx.fillText(`Total Earned: $ ${forstboardimg.forestFrame}`, 170, 25);
+    ctx.fillText(`Total Earned: $ ${boardImg.x}`, 170, 25);
 }
-
-
 
 
 
@@ -113,7 +131,8 @@ function score(){
  
     //  frequencyLion ++
     
-        if (forstboardimg.forestFrame % 3000 === 0){
+        if ( boardImg.x % 3000 === 0){
+            ctx.clearRect(0, 0, canvas.width, canvas.height)
             let randomLionX = 600; 
             let randomLionY = 255;
             // let randomLionY = Math.floor(Math.random() * 450);
@@ -124,10 +143,10 @@ function score(){
             actualGame.obstacleArr.push(newLion);
         }
             
-            forstboardimg.move();
+             boardImg.move();
             // actualLion.move();
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-             forstboardimg.draw();
+            // ctx.clearRect(0, 0, canvas.width, canvas.height);
+              boardImg.draw();
              actualPlayer.drawPlayer();
              actualPlayer.movePlayer();
             //  actualLion.drawObstacle();
@@ -142,7 +161,7 @@ function score(){
 
 
             if (collision(actualGame.obstacleArr)) {
-                alert(`GAME OVER: ${forstboardimg.forestFrame -1}`);
+                alert(`GAME OVER: ${boardImg.x -1}`);
                 // obstacleFrequency = 0;
                 // actualGame.obstacleArr=[]
                 cancelAnimationFrame(animation);
